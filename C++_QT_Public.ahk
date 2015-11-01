@@ -1,0 +1,563 @@
+﻿;Credits to David Wu for making this script
+
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+;==================================================================
+;opens help menu
+:O:\help::
+
+Gui, Add, Edit, ReadOnly x2 y-1 w910 h480, C++_QT_Public.ahk`nPurpose: More efficient programming!`n`n@author David Wu`n@version 1.0.0 (5:28 PM Saturday, October 31, 2015)`n`n`n`n`nHOTKEYS`nPressing the middle mouse button, aka the scrolling wheel, double clicks.`n`nAlt+B`nDeletes semicolon and adds brackets to function definitions.`n`nAlt+A`nAuto indents entire file.`n`nAlt+F`nActivate while cursor is just after function prototype to add function definition.`n`nCtrl+Shift+1`nCopies selection onto it's own clipboard. (Note: There are 1 - 5 clipboards)`n`nCtrl+1`nPastes clipboard 1. (Note: There are 1 - 5 clipboards)`n`nCtrl+~`nConverts current clipboard into a macro, then types it.`n`n`n`n`nCOMMANDS`n(Notice: uses the backslash above your enter key)`n`n\help`nOpens up a list of commands and descriptions, duh.`n`n\exit`n\quit`n\close`nCloses the script.`n`n\while`n\w`nPastes in a while loop statement.`n`n\endl`n\e`nPastes in a end line statement.`n`n\if`nPastes in a if statement.`n`n\ifelse`n\ife`nPastes in a if else statement.`n`n\switchcase`n\switch`n\s`nPastes in a switch case statement.`n`n\header`n\head`n\h`nPastes in a standardized header documentation template.`n`n\function`n\func`n\f`nPastes in a standardized function documentation template`n`n\again`nPastes in a small do again program.`n`n\debug`n\d`nPastes in a debug statement.`n`n\for`nPastes in a for loop statement.`n`n\for2`nPastes in a slightly different for loop statement.`n`n`n`n`nAUTO CORRECT`n::typo::correction`n`n::enld::endl`n::ednl::endl`n::null::NULL`n::reutnr::return`n::reutrn::return`n::int he::in the`n::t he::the`n::toekn::token`n::fucntion::function`n::ednk::endl`n::endk::endl`n::stauts::status`n::sutats::status`n::stats::status`n::remtoe::remote`n::freidn::friend`n::git s::git status`n::git l::git log`n::git r::git remote`n::@include::#include`n::reutn::return`n::ruent::return`n::rutne::return`n::retunr::return`n::virtural::virtual`n::treu::true`n::ture::true`n::funciton::function`n::fucntion::function`n::\::    (removes stray backslashes)`n
+; Generated using SmartGUI Creator for SciTE
+Gui, Show, w916 h483, Untitled GUI
+return
+
+GuiClose:
+gui, destroy
+
+;~ HOTKEYS`nPressing the middle mouse button, aka the scrolling wheel, double clicks.`n`nAlt+B`nDeletes semicolon and adds brackets to function definitions.`n`nAlt+A`nAuto indents entire file.`n`nAlt+F`nActivate while cursor is just after function prototype to add function definition.`n`nCtrl+Shift+1`nCopies selection onto it's own clipboard. (Note: There are 1 - 5 clipboards)`n`nCtrl+1`nPastes clipboard 1. (Note: There are 1 - 5 clipboards)`n`nCtrl+~`nConverts current clipboard into a macro, then types it.`n`n`n`n`nCOMMANDS`n(Notice: uses the backslash above your enter key)`n`n\help`nOpens up a list of commands and descriptions, duh.`n`n\exit`n\quit`n\close`nCloses the script.`n`n\while`n\w`nPastes in a while loop statement.`n`n\endl`n\e`nPastes in a end line statement.`n`n\if`nPastes in a if statement.`n`n\ifelse`n\ife`nPastes in a if else statement.`n`n\switchcase`n\switch`n\s`nPastes in a switch case statement.`n`n\header`n\head`n\h`nPastes in a standardized header documentation template.`n`n\function`n\func`n\f`nPastes in a standardized function documentation template`n`n\again`nPastes in a small do again program.`n`n\debug`n\d`nPastes in a debug statement.`n`n\for`nPastes in a for loop statement.`n`n\for2`nPastes in a slightly different for loop statement.`n`n`n`n`nAUTO CORRECT`n::typo::correction`n`n::enld::endl`n::ednl::endl`n::null::NULL`n::reutnr::return`n::reutrn::return`n::int he::in the`n::t he::the`n::toekn::token`n::fucntion::function`n::ednk::endl`n::endk::endl`n::stauts::status`n::sutats::status`n::stats::status`n::remtoe::remote`n::freidn::friend`n::git s::git status`n::git l::git log`n::git r::git remote`n::@include::#include`n::reutn::return`n::ruent::return`n::rutne::return`n::retunr::return`n::virtural::virtual`n::treu::true`n::ture::true`n::funciton::function`n::fucntion::function`n::\::    (removes stray backslashes)`n
+
+return
+;==================================================================
+
+;==================================================================
+;Closes the script
+:O:\exit::
+:O:\quit::
+:O:\close::
+
+ExitApp
+;==================================================================
+
+;==================================================================
+;When middle mouse button is pressed
+;double clicks
+MButton::
+
+MouseClick,left
+MouseClick,left
+
+return
+;==================================================================
+
+;==================================================================
+;When ALT+b is pressed
+;deletes semicolon and adds brackets to functions at the bottom of the program.
+
+!b::
+Send {Backspace}{Enter}{{}{Enter}
+
+return
+;==================================================================
+
+;==================================================================
+;When ALT+a is pressed
+;does ctrl+a then ctrl+i
+
+!a::
+Send ^a^i
+
+return
+;==================================================================
+
+;==================================================================
+;When ALT+F is pressed
+;adds function to .cpp too
+
+!f::
+Send !{Enter}{Enter}!{Left}
+
+return
+;==================================================================
+
+;================================================================== (Learn how it works below)
+;adds a while statement
+
+:O:\while::	;when user types out \while
+:O:\w::		;or when user types out \w
+ClipSaved := ClipboardAll	;saves what is currently on the clipboard to a temporary clipboard
+Clipboard =	;sets the clipboard to whatever is between the parenthesis( )
+(
+while(true)
+{
+        
+}
+)
+Send ^v	;Pastes the clipboard
+sleep 150
+Clipboard := ClipSaved ;returns the clipboard to the original
+ClipSaved = ;empties the temporary clipboard
+return
+;==================================================================
+
+;==================================================================
+;adds an end line to console
+:O:\endl::
+:O:\e::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+std::cout<<std::endl;
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+;adds an if statement
+
+:O:\if::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+if (true)
+{
+        
+}
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+;adds an if else statement
+
+:O:\ife::
+:O:\ifelse::
+
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+if (true)
+{
+        
+}
+else
+{
+		
+}
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+;adds a switch case statement
+
+:O:\switchcase::
+:O:\switch::
+:O:\s::
+
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+switch (insertVariableHere)
+{
+case '':
+    
+    break;
+    
+case 0:
+    
+    break;
+    
+default:
+    cout<<"Invalid key..."<<endl;
+    break;
+}
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+;adds a standardized header documentation template
+ 
+:O:\header::
+:O:\head::
+:O:\h::
+
+FormatTime, dateVar,Mdyyyyhmtt
+
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+/**
+    enterCourseYouAreTakingHere
+    fileName.extensionName
+    Purpose: enterPurposeOfProgramHere
+
+    @author enterNameHere
+    @version enterVersionNumberHere (%dateVar%)
+*/
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+;adds a standardized function documentation template
+
+:O:\function::
+:O:\func::
+:O:\f::
+
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+/**
+    enterPurposeOfFunctionHere
+
+    @param enterDesriptionOfAllParametersHere
+    @return enterDesriptionOfReturnHere
+*/
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+:O:\again::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+char again='y';
+    
+while (again=='y' || again=='Y')
+{
+        
+    cout<<"Run program again? y/n: ";
+    cin>>again;
+        
+}
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+:O:\debug::
+:O:\d::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+std::cout<<"DEBUG : "<<<<std::endl;
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+:O:\for::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+for (int i=0;i<;i++)
+{
+    
+}
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;================================================================== 
+
+;==================================================================
+:O:\for2::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+for (int j=0;j<;j++)
+{
+    
+}
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;================================================================== 
+
+
+;####################################################################### Multiple Clipboards #########################################################################
+
+; Hotkeys
+^+1::Copy(1) ;Control+Shift+1
+^1::Paste(1) ;Control+1
+
+^+2::Copy(2)
+^2::Paste(2)
+
+^+3::Copy(3)
+^3::Paste(3)
+
+^+4::Copy(4)
+^4::Paste(4)
+
+^+5::Copy(5)
+^5::Paste(5)
+
+:O:/paste::
+loop, 6
+{
+ send {backspace}
+}
+sleep, 150
+PasteSend()
+return
+
+^`::PasteSend()
+
+Copy(clipboardID)
+{
+	global ; All variables are global by default
+	local oldClipboard := ClipboardAll ; Save the (real) clipboard
+	
+	Clipboard = ; Erase the clipboard first, or else ClipWait does nothing
+	Send ^c
+	ClipWait, 2, 1 ; Wait 1s until the clipboard contains any kind of data
+	if ErrorLevel 
+	{
+		Clipboard := oldClipboard ; Restore old (real) clipboard
+		return
+	}
+	
+	ClipboardData%clipboardID% := ClipboardAll
+	Clipboard := oldClipboard ; Restore old (real) clipboard
+}
+
+Cut(clipboardID)
+{
+	global ; All variables are global by default
+	local oldClipboard := ClipboardAll ; Save the (real) clipboard
+	
+	Clipboard = ; Erase the clipboard first, or else ClipWait does nothing
+	Send ^x
+	ClipWait, 2, 1 ; Wait 1s until the clipboard contains any kind of data
+	if ErrorLevel 
+	{
+		Clipboard := oldClipboard ; Restore old (real) clipboard
+		return
+	}
+	ClipboardData%clipboardID% := ClipboardAll
+	
+	Clipboard := oldClipboard ; Restore old (real) clipboard
+}
+
+Paste(clipboardID)
+{
+	global
+	local oldClipboard := ClipboardAll ; Save the (real) clipboard
+	
+	Clipboard := ClipboardData%clipboardID%
+	
+	Send ^v
+
+	sleep, 100
+	
+	Clipboard := oldClipboard ; Restore old (real) clipboard
+	oldClipboard = 
+}
+
+PasteSend() ;pastes with keystrokes instead (for apps that don't allow pasting)
+{
+	global
+	 
+	 temp := clipboard
+	 
+	sendevent %temp%
+	temp = 
+
+}
+
+
+
+
+;#########################################################################################################################################################################
+
+
+;==================================================================
+;AutoCorrect (Keep adding common typos in here.) 
+;   ::typo::correction
+
+::enld::endl
+::ednl::endl
+::null::NULL
+::reutnr::return
+::reutrn::return
+::int he::in the
+::t he::the
+::toekn::token
+::fucntion::function
+::ednk::endl
+::endk::endl
+::stauts::status
+::sutats::status
+::stats::status
+::remtoe::remote
+::freidn::friend
+::git s::git status
+::git l::git log
+::git r::git remote
+::@include::#include
+::reutn::return
+::ruent::return
+::rutne::return
+::retunr::return
+::virtural::virtual
+::treu::true
+::ture::true
+::funciton::function
+::fucntion::function
+::\::
+
+return
+;==================================================================
+
+
+;==================================================================
+;					HELP MENU
+;~ HOTKEYS
+
+;~ Pressing the middle mouse button, aka the scrolling wheel, double clicks.
+
+;~ Alt+B
+;~ Deletes semicolon and adds brackets to function definitions.
+
+;~ Alt+A
+;~ Auto indents entire file.
+
+;~ Alt+F
+;~ Activate while cursor is just after function prototype to add function definition.
+
+;~ Ctrl+Shift+1
+;~ Copies selection onto it's own clipboard. (Note: There are 1 - 5 clipboards)
+
+;~ Ctrl+1
+;~ Pastes clipboard 1. (Note: There are 1 - 5 clipboards)
+
+;~ Ctrl+~
+;~ Converts current clipboard into a macro, then types it.
+
+
+
+;~ COMMANDS
+;~ (Notice: uses the backslash above your enter key)
+
+;~ \help
+;~ Opens up a list of commands and descriptions, duh.
+
+;~ \exit
+ ;~ \quit
+ ;~ \close
+;~ Closes the script.
+
+;~ \while
+;~ \w
+;~ Pastes in a while loop statement.
+
+;~ \endl
+;~ \e
+;~ Pastes in a end line statement.
+
+;~ \if
+;~ Pastes in a if statement.
+
+;~ \ifelse
+;~ \ife
+;~ Pastes in a if else statement.
+
+;~ \switchcase
+;~ \switch
+;~ \s
+;~ Pastes in a switch case statement.
+
+;~ \header
+;~ \head
+;~ \h
+;~ Pastes in a standardized header documentation template.
+
+;~ \function
+;~ \func
+;~ \f
+;~ Pastes in a standardized function documentation template
+
+;~ \again
+;~ Pastes in a small do again program.
+
+;~ \debug
+;~ \d
+;~ Pastes in a debug statement.
+
+;~ \for
+;~ Pastes in a for loop statement.
+
+;~ \for2
+;~ Pastes in a slightly different for loop statement.
+
+
+
+
+;~ AUTO CORRECT
+ ;~ ::typo::correction
+
+;~ ::enld::endl
+;~ ::ednl::endl
+;~ ::null::NULL
+;~ ::reutnr::return
+;~ ::reutrn::return
+;~ ::int he::in the
+;~ ::t he::the
+;~ ::toekn::token
+;~ ::fucntion::function
+;~ ::ednk::endl
+;~ ::endk::endl
+;~ ::stauts::status
+;~ ::sutats::status
+;~ ::stats::status
+;~ ::remtoe::remote
+;~ ::freidn::friend
+;~ ::git s::git status
+;~ ::git l::git log
+;~ ::git r::git remote
+;~ ::@include::#include
+;~ ::reutn::return
+;~ ::ruent::return
+;~ ::rutne::return
+;~ ::retunr::return
+;~ ::virtural::virtual
+;~ ::treu::true
+;~ ::ture::true
+;~ ::funciton::function
+;~ ::fucntion::function
+;~ ::\::    (removes stray backslashes)
+;==================================================================
