@@ -5,15 +5,22 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+VERSION=1.0.1
+
+;==================================================================
+	MsgBox, ,Version %VERSION% ,Type \help (Backslash above enter key.) anywhere to get started
+
+;==================================================================
+
 ;==================================================================
 ;opens help menu
 :O:\help::
 
 Gui, Font, underline
-Gui, Add, Text, x320 y0 cBlue gUpdateLink, Version 1.0.0 (Click here for source code and updates!)
+Gui, Add, Text, x320 y0 cBlue gUpdateLink, Version %VERSION% (Click here for source code and updates!)
 Gui, Font, norm
  
-Gui, Add, Edit, ReadOnly x0 y25 w910 h480, C++_QTCreator_Macro_Public.ahk`nPurpose: More efficient programming!`n`n@author David Wu`n@version 1.0.0 (5:28 PM Saturday, October 31, 2015)`n`n`n`n`nHOTKEYS`n`nMiddle Mouse Button`nPressing the middle mouse button, aka the scrolling wheel, double clicks and selects words faster.`n`nAlt+B`nDeletes semicolon and adds brackets to function definitions.`n`nAlt+A`nAuto indents entire file.`n`nAlt+F`nActivate while cursor is just after function prototype to add function definition.`n`nCtrl+Shift+1`nCopies selection onto it's own clipboard. (Note: There are 1 - 5 clipboards)`n`nCtrl+1`nPastes clipboard 1. (Note: There are 1 - 5 clipboards)`n`nCtrl+~`nConverts current clipboard into a macro, then types it.`n`n`n`n`nCOMMANDS`n(Notice: uses the backslash above your enter key. Start typing anywhere.)`n`n\help`nOpens up a list of commands and descriptions, duh.`n`n\exit`n\quit`n\close`nCloses the script.`n`n\while`n\w`nPastes in a while loop statement.`n`n\endl`n\e`nPastes in a end line statement.`n`n\if`nPastes in a if statement.`n`n\ifelse`n\ife`nPastes in a if else statement.`n`n\switchcase`n\switch`n\s`nPastes in a switch case statement.`n`n\header`n\head`n\h`nPastes in a standardized header documentation template.`n`n\function`n\func`n\f`nPastes in a standardized function documentation template`n`n\again`nPastes in a small do again program.`n`n\debug`n\d`nPastes in a debug statement.`n`n\for`nPastes in a for loop statement.`n`n\for2`nPastes in a slightly different for loop statement.`n`n\paste`nConverts current clipboard into a macro, then types it.`n`n`n`n`nAUTO CORRECT`n(::typo::correction)`n`n::enld::endl`n::ednl::endl`n::null::NULL`n::reutnr::return`n::reutrn::return`n::int he::in the`n::t he::the`n::toekn::token`n::fucntion::function`n::ednk::endl`n::endk::endl`n::stauts::status`n::sutats::status`n::stats::status`n::remtoe::remote`n::freidn::friend`n::git s::git status`n::git l::git log`n::git r::git remote`n::@include::#include`n::reutn::return`n::ruent::return`n::rutne::return`n::retunr::return`n::virtural::virtual`n::treu::true`n::ture::true`n::funciton::function`n::fucntion::function`n::\::    (removes stray backslashes)`n
+Gui, Add, Edit, ReadOnly x0 y25 w910 h480, C++_QTCreator_Macro_Public.ahk`nPurpose: More efficient programming!`n`n@author David Wu`n@version %VERSION% (5:28 PM Saturday, October 31, 2015)`n`n`n`n`nHOTKEYS`n`nMiddle Mouse Button`nPressing the middle mouse button, aka the scrolling wheel, double clicks and selects words faster.`n`nAlt+B`nDeletes semicolon and adds brackets to function definitions.`n`nAlt+A`nAuto indents entire file.`n`nAlt+F`nActivate while cursor is just after function prototype to add function definition.`n`nCtrl+Shift+1`nCopies selection onto it's own clipboard. (Note: There are 1 - 5 clipboards)`n`nCtrl+1`nPastes clipboard 1. (Note: There are 1 - 5 clipboards)`n`nCtrl+~`nConverts current clipboard into a macro, then types it.`n`n`n`n`nCOMMANDS`n(Notice: uses the backslash above your enter key. Start typing anywhere.)`n`n\help`nOpens up a list of commands and descriptions, duh.`n`n\exit`n\quit`n\close`nCloses the script.`n`n\while`n\w`nPastes in a while loop statement.`n`n\endl`n\e`nPastes in a end line statement.`n`n\if`nPastes in a if statement.`n`n\ifelse`n\ife`nPastes in a if else statement.`n`n\switchcase`n\switch`n\s`nPastes in a switch case statement.`n`n\header`n\head`n\h`nPastes in a standardized header documentation template.`n`n\function`n\func`n\f`nPastes in a standardized function documentation template`n`n\again`nPastes in a small do again program.`n`n\debug`n\d`nPastes in a debug statement.`n`n\for`nPastes in a for loop statement.`n`n\for2`nPastes in a slightly different for loop statement.`n`n\paste`nConverts current clipboard into a macro, then types it.`n`n`n`n`nAUTO CORRECT`n(::typo::correction)`n`n::enld::endl`n::ednl::endl`n::null::NULL`n::reutnr::return`n::reutrn::return`n::int he::in the`n::t he::the`n::toekn::token`n::fucntion::function`n::ednk::endl`n::endk::endl`n::stauts::status`n::sutats::status`n::stats::status`n::remtoe::remote`n::freidn::friend`n::git s::git status`n::git l::git log`n::git r::git remote`n::@include::#include`n::reutn::return`n::ruent::return`n::rutne::return`n::retunr::return`n::virtural::virtual`n::treu::true`n::ture::true`n::funciton::function`n::fucntion::function`n::\::    (removes stray backslashes)`n
 ; Generated using SmartGUI Creator for SciTE
 
 Gui, Show, w916 h508, Help
@@ -192,8 +199,8 @@ return
 
 ;==================================================================
 ;adds a standardized header documentation template
+ ;NOTE: make it smarter. Hilight the function, save it into clipboard and covert to a string variable, tokenize the variable to find the name, parameters, and return type. returnType name(parameterType name, parameterType* name, parameterType &name)
  
-:O:\header::
 :O:\head::
 :O:\h::
 
