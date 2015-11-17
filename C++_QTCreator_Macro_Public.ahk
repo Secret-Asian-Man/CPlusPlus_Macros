@@ -142,7 +142,7 @@ Clipboard =
 do
 {
 	
-} while(true)
+} while(true);
 )
 Send ^v
 sleep 150
