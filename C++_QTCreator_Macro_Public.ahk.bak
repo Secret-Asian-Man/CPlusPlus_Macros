@@ -142,7 +142,7 @@ Clipboard =
 do
 {
 	
-} while(true)
+} while(true);
 )
 Send ^v
 sleep 150
@@ -341,7 +341,22 @@ return
 ClipSaved := ClipboardAll
 Clipboard = 
 (
-std::cout<<"DEBUG : "<<<<std::endl;
+std::cout<<"DEBUG : "<<insertVariable<<std::endl;
+)
+Send ^v
+sleep 150
+Clipboard := ClipSaved
+ClipSaved =
+return
+;==================================================================
+
+;==================================================================
+:O:\debug2::
+:O:\d2::
+ClipSaved := ClipboardAll
+Clipboard = 
+(
+std::cout<<"DEBUG @@@@@@@@@@@@@@@@@@@@@@@@@@@@: "<<std::endl;
 )
 Send ^v
 sleep 150
@@ -355,7 +370,7 @@ return
 ClipSaved := ClipboardAll
 Clipboard = 
 (
-for (int i=0;i<;i++)
+for (unsigned int i=0;i<something;++i)
 {
     
 }
@@ -372,7 +387,7 @@ return
 ClipSaved := ClipboardAll
 Clipboard = 
 (
-for (int j=0;j<;j++)
+for (unsigned int j=0;j<something;++j)
 {
     
 }
