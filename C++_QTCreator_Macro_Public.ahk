@@ -5,8 +5,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-VERSION=1.1.3
-timeDate=(5:30 PM Friday, December 11, 2015)
+VERSION=1.1.4
+timeDate=(7:43 PM Sunday, March 6, 2016)
 
 ;==================================================================
 	MsgBox, ,Version %VERSION% ,Type \help (Backslash above enter key.) anywhere to get started
@@ -503,6 +503,21 @@ return
 
 ^+5::Copy(5)
 ^5::Paste(5)
+
+^+6::Copy(6)
+^6::Paste(6)
+
+^+7::Copy(7)
+^7::Paste(7)
+
+^+8::Copy(8)
+^8::Paste(8)
+
+^+9::Copy(9)
+^9::Paste(9)
+
+^+0::Copy(0)
+^0::Paste(0)
 
 :O:\paste::
 
